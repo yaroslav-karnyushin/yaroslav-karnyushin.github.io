@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>My first proper HTML page</title>
+</head>
+
+
+<body>
+   <script>
+	var words = [
+    "javascript",
+    "amazing",
+    "pancake"
+    ];
+
+    var word = words[Math.floor(Math.random() * words.length)];
+    var answerArray = [];
+    for (var i =  0; i < word.length; i++) {
+    	answerArray[i] = "_";
+    }
+
+    var remainingLetters = word.length;
+    while (remainingLetters > 0) {
+    	//Game code goes here
+    	//Show the player their progress
+    	//Take input fromthe player
+    	//Update answerArray and remainingLetters
+    	//for every correct guses   
+    }
+    alert(answerArray.join(" "));
+    var guess = prompt("Guess a Letter, or click Cansle to stop playing.");
+    if (guess === null) {
+    	break;
+    } else if (guess.length !== 1) {
+    	alert("please enter a single letter.");
+    } else {
+    	//Update the game state whith the guess
+    }
+    for (var j = 0; j < word.length; j++) {
+    	if (word[j] === guess) {
+    		answerArray[j] = guess;
+    		remainingLetters--;
+    	}
+    }
+    alert(answerArray.join(" "));
+    alert("Good job! The answer was " + word);
+</script>
+</body>
+</html>
