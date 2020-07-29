@@ -14,7 +14,7 @@
     	};
     	
     	Car.prototype.draw = function() {
-    		var carHtml = '<img src="http://nostarch.com/images/car.png">';
+    		var carHtml = '<img src="./images/car.png">';
 
     		this.carElement = $(carHtml);
 
@@ -32,14 +32,40 @@
 
     		this.carElement.css({
     			left: this.x,
-    			right: this.y
+    			top: this.y
     	    });
     	};
 
+    	Car.prototype.moveUp = function() {
+    		this.y -= 5;
+
+    		this.carElement.css({
+    			left: this.x,
+    			top: this.y
+    	    });
+    	};		
+    	
+    	Car.prototype.moveDown = function() {
+    		this.y += 5;
+
+    		this.carElement.css({
+    			left: this.x,
+    			top: this.y
+    	    });
+    	};
+
+    	Car.prototype.moveLeft = function() {
+    		this.x -= 5;
+
+    		this.carElement.css({
+    			left: this.x,
+    			top: this.y
+    	    });
+    	};	
     	var tesla = new Car(20, 20);
     	var nissan = new Car(100, 200);
 
-    	tesla.draw();
+	   	tesla.draw();
     	nissan.draw();
     </script>
 </body>
